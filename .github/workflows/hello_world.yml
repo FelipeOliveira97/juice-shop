@@ -51,7 +51,7 @@ jobs:
     runs-on: macos-latest
     needs:
       - hello-world-ubunt
-      -hello-world-windows
+      - hello-world-windows
 
     steps:
       - name: Print Hello World MacOs
