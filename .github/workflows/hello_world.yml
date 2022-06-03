@@ -50,7 +50,7 @@ jobs:
     name: Hello world MacOs
     runs-on: macos-latest
     needs:
-      - hello-world-ubunt
+      - hello-world-ubuntu
       - hello-world-windows
 
     steps:
