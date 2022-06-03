@@ -6,7 +6,9 @@ name: Hello World
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ master ]
+    branches:
+    - master
+    - develop
   pull_request:
     branches: [ master ]
 
@@ -17,7 +19,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   hello-world-ubuntu:
-    name : Hello world Ubuntu
+    name: Hello world Ubuntu
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -36,23 +38,22 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-  
+          
   hello-world-windows:
     name: Hello world Windows
-    needs: [ hello-world-ubuntu ]
     runs-on: windows-latest
-
+    
     steps:
       - name: Print Hello World Windows
         run: echo 'Hello world rodando no Windows'
-
+        
   hello-world-macos:
-    name: Hello world MacOs
+    name: Hello world MacOS
     runs-on: macos-latest
     needs:
       - hello-world-ubuntu
       - hello-world-windows
-
+      
     steps:
-      - name: Print Hello World MacOs
-        run: echo 'Hello world rodando no MacOs'
+      - name: Print Hello World MacOS
+        run: echo 'Hello world rodando no MacOS'
